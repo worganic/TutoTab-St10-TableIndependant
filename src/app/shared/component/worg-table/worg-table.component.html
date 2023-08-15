@@ -1,0 +1,38 @@
+<div *ngIf="tableOption">
+    <div class="container">
+        <div class="row" style="margin-left:20px;">
+            <div class="col infosMaj">
+                Réactualisation des données dans : <b>{{ time }}</b> secondes.
+            </div>
+            <div class="col">
+                <button mat-raised-button (click)="majDonnees()">
+                    MAJ donnees manuel
+                </button>
+            </div>
+        </div>
+        <div class="row" style="margin-left:20px;">
+            <div class="col">
+                <span class="infosActu" *ngIf="infoActualisation">Les données viennent d'être mise à jour.</span>
+            </div>
+        </div>
+    </div>
+
+    <table class="table tableCustom table-striped">
+        <thead class="tableTheadCustom">
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">First</th>
+                <th scope="col">Last</th>
+                <th scope="col"></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let user of DATATAB" class="tableRow">
+                <th scope="row">{{ user.id }}</th>
+                <td>{{ user.username }}</td>
+                <td>{{ user.country }}</td>
+                <td></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
